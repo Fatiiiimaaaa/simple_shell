@@ -1,18 +1,18 @@
 #include "shell.h"
 
 /**
- * main - Entry point.
- * @ac: Argument count.
- * @av: Argument vector.
+ * main - entry point
+ * @ac: arg count
+ * @av: arg vector
  *
- * Return: 0 on success, 1 on error.
+ * Return: 0 on success, 1 on error
  */
 int main(int ac, char **av)
 {
-	info_t info[] = {INFO_INIT};
+	info_t info[] = { INFO_INIT };
 	int fd = 2;
 
-	asm("mov %1, %0\n\t"
+	asm ("mov %1, %0\n\t"
 		"add $3, %0"
 		: "=r" (fd)
 		: "r" (fd));
@@ -42,4 +42,3 @@ int main(int ac, char **av)
 	hsh(info, av);
 	return (EXIT_SUCCESS);
 }
-
